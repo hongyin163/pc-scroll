@@ -1,0 +1,105 @@
+
+@import '../../style/themes/default';
+@import '../../style/mixins/index';
+@import '../../icon/style/index.less';
+
+@scroll-width:10px;
+.biz-scroll{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    &_body{
+        transform: translate3d(0,0,0);
+        user-select: none;        
+    }
+    &_indicate-wrap.horizontal{
+        position: absolute;
+        // right: 0;
+        bottom: 0;
+        left: 0;
+        // height: @scroll-width;
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+        border-radius: 3px;  
+        background-color: #F5F5F5;  
+        user-select: none;
+        &:hover{
+            // height: 15px;
+            border-radius: 6px; 
+            .indicate.horizontal{
+                // height: 15px;
+                border-radius: 6px; 
+                cursor: pointer;
+            }
+        }
+    }
+    .indicate.horizontal{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // width: 100px;
+        // height: @scroll-width;
+        border-radius: 3px;  
+        box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+        background-color: #d5d5d5;  
+        user-select: none;
+    }
+    &_indicate-wrap.vertical{
+        position: absolute;
+        top:0;
+        right: 0;
+        // bottom: 0;
+        // height: @scroll-width;
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+        border-radius: 3px;  
+        background-color: #F5F5F5;  
+        user-select: none;
+        &:hover{
+            // height: 15px;
+            border-radius: 6px; 
+            .indicate.vertical{
+                // height: 15px;
+                border-radius: 6px; 
+                cursor: pointer;
+            }
+        }
+    }
+    .indicate.vertical{
+        position: absolute;
+        top: 0;
+        right: 0;
+        // width: 100px;
+        // height: @scroll-width;
+        border-radius: 3px;  
+        box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+        background-color: #d5d5d5;  
+        user-select: none;
+    }
+
+    &_pre-btn.left,
+    &_next-btn.right{
+        position: absolute;
+        top:0;      
+        bottom: 0;
+        width: 28px;
+        margin: 0;
+        text-align: center;
+        &>.bizicon{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin: 0;
+            margin-top: -6px;
+            margin-left: -6px;
+            color: @primary-color;
+            font-size: 12px;
+        }
+        cursor: pointer;
+        // background: red;
+    }
+    &_pre-btn.left{
+        left: 0;
+    }
+    &_next-btn.right{
+        right: 0;
+    }
+}
